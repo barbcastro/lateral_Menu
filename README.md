@@ -6,6 +6,6 @@ Projeto desenvolvido no curso FRONTSTAR com a intenção de praticar positição
 <img src="./assets/menu_Lateral.gif"/>
 
 ## Tecnologias Utilizadas
-- CSS
+- LESS
 - HTML
 - JavaScript
