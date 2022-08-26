@@ -13,6 +13,13 @@ body {
   font-family: sans-serif; 
 }
 
+
+section {
+  height: 1500px;
+  color: #fff;
+  padding: 200px;
+}
+
 #app {
   margin-top: var(--menu-height);
   display: flex;
@@ -23,12 +30,7 @@ body {
 .container {
   height: 100%;
   width: 100%;
-  overflow: auto;
-
-  section {
-    height: 1500px;
-  }
-  
+  overflow: auto;  
 }
 
 .top-menu {
@@ -43,7 +45,7 @@ body {
   left: 0;
 
   svg {
-    padding: o 15px;
+    padding: 0 15px;
     border-right: 1px solid var(--opacity-dark-blue);
     height: 100%;
   }
@@ -53,7 +55,7 @@ body {
   background: #fff;
   width: 0;
   height: 100vh;
-  animation: menu-close 0.5s;
+  transition: width 0.5s;
 
 /* exemplo de posição fixed  
   position: fixed;
@@ -82,7 +84,9 @@ body {
       }
 
       svg {
-        margin-right: 15px;
+        padding: 15px;
+        border-radius: 1px solid var(--opacity-dark-blue);
+        height: 100%;
       }
 
       a {
@@ -95,7 +99,7 @@ body {
   }
 
   &.active {
-    animation: menu-open 0.5s;
+    transition: width 0.5s;
     width:250px;
     
     ul {
@@ -106,18 +110,14 @@ body {
   }
 }
 
-@keyframes menu-open {
-  from {
-    width: 0;
-  } to {
-    width: 250px; 
-  }
-}
+@media (max-width:480px) {
+  .lateral-menu {
+    position: fixed;
+    top: var(--menu-height);
+    left: 0;
 
-@keyframes menu-close {
-  from {
-    width: 250px;
-  } to {
-    width: 0; 
+    &.active{
+      width: 100%;
+    }
   }
 }
